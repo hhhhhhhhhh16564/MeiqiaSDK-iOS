@@ -9,14 +9,14 @@
 
 Pod::Spec.new do |s|
   s.name             = "XMeiqia"
-  s.version          = "3.4.9"
+  s.version          = "4.0.0"
   s.summary          = "美洽官方 SDK for iOS"
   s.description      = "美洽官方的 iOS SDK"
 
   s.homepage         = "https://github.com/hhhhhhhhhh16564/MeiqiaSDK-iOS"
   s.license          = 'MIT'
   s.author           = { "ijinmao" => "340052204@qq.com" }
-  s.source           = { :git => "git@github.com:hhhhhhhhhh16564/MeiqiaSDK-iOS.git", :tag => s.version }
+  s.source           = { :git => "https://github.com/hhhhhhhhhh16564/MeiqiaSDK-iOS.git", :tag => s.version }
   s.social_media_url = "https://meiqia.com"
   s.documentation_url = "https://github.com/Meiqia/MeiqiaSDK-iOS/wiki"
   s.platform     = :ios, '7.0'
