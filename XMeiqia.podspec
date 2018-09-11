@@ -10,8 +10,8 @@
 Pod::Spec.new do |s|
   s.name             = "XMeiqia"
   s.version          = "3.4.9"
-  s.summary          = "XMeiqia"
-  s.description      = "XMeiqia"
+  s.summary          = "美洽官方 SDK for iOS"
+  s.description      = "美洽官方的 iOS SDK"
 
   s.homepage         = "https://github.com/hhhhhhhhhh16564/MeiqiaSDK-iOS"
   s.license          = 'MIT'
@@ -22,13 +22,23 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.subspec 'XMeiqiaSDK' do |ss|
+  s.subspec 'MeiqiaSDK' do |ss|
     ss.frameworks =  'AVFoundation', 'CoreTelephony', 'SystemConfiguration', 'MobileCoreServices'
     ss.vendored_frameworks = 'Meiqia-SDK-files/MeiQiaSDK.framework'
     ss.libraries  =  'sqlite3', 'icucore', 'stdc++'
     ss.xcconfig = { "FRAMEWORK_SEARCH_PATHS" => "${PODS_ROOT}/Meiqia/Meiqia-SDK-files"}
-    ss.source_files = 'Meiqia-SDK-files/**/*'
   end
-
+  s.subspec 'MQChatViewController' do |ss|
+    ss.dependency 'XMeiqia/MeiqiaSDK'
+    # avoid compile error when using 'use frameworks!',because this header is c++, but in unbrellar header don't know how to compile, there's no '.mm' file in the context.
+    ss.private_header_files = 'Meiqia-SDK-files/MQChatViewController/Vendors/VoiceConvert/amrwapper/wav.h'
+    ss.source_files = 'Meiqia-SDK-files/MeiqiaSDKViewInterface/*.{h,m}', 'Meiqia-SDK-files/MQChatViewController/**/*.{h,m,mm,cpp}', 'Meiqia-SDK-files/MQMessageForm/**/*.{h,m}'
+    ss.vendored_libraries = 'Meiqia-SDK-files/MQChatViewController/Vendors/MLAudioRecorder/amr_en_de/lib/libopencore-amrnb.a', 'Meiqia-SDK-files/MQChatViewController/Vendors/MLAudioRecorder/amr_en_de/lib/libopencore-amrwb.a'
+    #ss.preserve_path = '**/libopencore-amrnb.a', '**/libopencore-amrwb.a'
+    ss.xcconfig = { "LIBRARY_SEARCH_PATHS" => "\"$(PODS_ROOT)/Meiqia/Meiqia-SDK-files\"" }
+    ss.resources = 'Meiqia-SDK-files/MQChatViewController/Assets/MQChatViewAsset.bundle'
+  end
+  
+  
 
 end

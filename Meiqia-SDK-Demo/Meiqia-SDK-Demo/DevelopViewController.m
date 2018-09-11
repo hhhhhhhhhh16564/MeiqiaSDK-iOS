@@ -14,6 +14,10 @@
 #import "MQMessageFormInputModel.h"
 #import "MQMessageFormViewManager.h"
 #import "NSArray+MQFunctional.h"
+#import "MQChatViewConfig.h"
+#import "MQChatTableView.h"
+#import "MQServiceToViewInterface.h"
+
 
 #define MQ_DEMO_ALERTVIEW_TAG 3000
 #define MQ_DEMO_ALERTVIEW_TAG_APPKEY 4000

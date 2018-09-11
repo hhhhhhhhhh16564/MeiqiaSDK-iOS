@@ -37,6 +37,11 @@
 #import "MQChatViewManager.h"
 #import <MeiQiaSDK/MQManager.h>
 #import "XLPInputView.h"
+#import "MQChatViewConfig.h"
+#import "MQChatTableView.h"
+#import "MQServiceToViewInterface.h"
+
+
 static CGFloat const kMQChatViewInputBarHeight = 80.0;
 
 @interface MQChatViewController () <UITableViewDelegate, MQChatViewServiceDelegate, MQBottomBarDelegate, UIImagePickerControllerDelegate, MQChatTableViewDelegate, MQChatCellDelegate, MQServiceToViewInterfaceErrorDelegate,UINavigationControllerDelegate, MQEvaluationViewDelegate, MQInputContentViewDelegate, MQKeyboardControllerDelegate, MQRecordViewDelegate, MQRecorderViewDelegate,XLPInputViewDelegate>

@@ -7,12 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MQChatViewConfig.h"
-#import "MQChatTableView.h"
-#ifdef INCLUDE_MEIQIA_SDK
-#import "MQServiceToViewInterface.h"
-#endif
 
+@class MQChatViewConfig;
+@class MQChatTableView;
+@class MQServiceToViewInterface;
 /**
  * @brief 聊天界面的ViewController
  *
