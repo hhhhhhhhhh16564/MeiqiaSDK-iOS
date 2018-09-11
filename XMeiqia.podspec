@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "XMeiqia"
-  s.version          = "3.4.8"
+  s.version          = "3.4.9"
   s.summary          = "XMeiqia"
   s.description      = "XMeiqia"
 
